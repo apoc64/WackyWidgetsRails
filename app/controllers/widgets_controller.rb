@@ -1,9 +1,11 @@
 class WidgetsController < ApplicationController
+  before_action :require_login
   before_action :set_widget, only: [:show, :edit, :update, :destroy]
 
   # GET /widgets
   # GET /widgets.json
   def index
+
     @widgets = Widget.all
   end
 
