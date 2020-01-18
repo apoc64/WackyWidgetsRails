@@ -4,6 +4,8 @@ class User < ApplicationRecord
   validates_uniqueness_of :email
   validate :password_complexity
 
+  enum role: %i[default admin]
+
   private
 
   def password_complexity

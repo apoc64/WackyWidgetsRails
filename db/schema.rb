@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2020_01_18_172209) do
     t.string "crypted_password"
     t.string "salt"
     t.string "name"
-    t.integer "role"
+    t.integer "role", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "remember_me_token"
