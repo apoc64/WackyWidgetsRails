@@ -1,7 +1,11 @@
 require 'rails_helper'
 
 describe User, type: :model do
-  describe "validations" do
+  describe 'relationships' do
+    it { should have_many (:widgets)}
+  end
+
+  describe 'validations' do
     it { should validate_presence_of (:email) }
 
     it 'only saves users with strong passwords' do
