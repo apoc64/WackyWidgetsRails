@@ -25,7 +25,7 @@ class WidgetsController < ApplicationController
   # POST /widgets
   # POST /widgets.json
   def create
-    @widget = Widget.new(widget_params)
+    @widget = current_user.widgets.new(widget_params)
 
     respond_to do |format|
       if @widget.save
@@ -71,6 +71,6 @@ class WidgetsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def widget_params
-      params.require(:widget).permit(:name, :description, :picture, :color, :is_public, :user_id)
+      params.require(:widget).permit(:name, :description, :picture, :color, :is_public)
     end
 end
