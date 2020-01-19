@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'widget update' do
+describe 'edit widget' do
   it 'wont show for guests' do
     bob = new_bob
     widget = Widget.create(name: 'wow', description: 'yowza', color: 'red', picture: 'http://www.cat.com/pic', is_public: true, user: bob)
