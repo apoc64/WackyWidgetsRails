@@ -43,8 +43,8 @@
           <li><%= link_to "Log Out", session_path(current_user), method: :delete %></li>
         <% else %>
           <%= form_tag sessions_path do %>
-          <li><%= text_field_tag :email, params[:email], placeholder: 'Email', id: 'nav-email' %></li>
-          <li><%= password_field_tag :password, params[:password], placeholder: 'Password', id: 'nav-password' %></li>
+          <li><%= text_field_tag :email, params[:email], placeholder: 'Email' %></li>
+          <li><%= password_field_tag :password, params[:password], placeholder: 'Password' %></li>
           <li><%= submit_tag 'Log In', class: 'btn-small red darken-1' %></li>
           <% end %>
         <% end %>

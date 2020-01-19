@@ -28,4 +28,23 @@ describe 'widgets api index' do
       end
     end
   end
+
+  describe 'widgets api show' do
+    it 'gets one public widgets' do
+      bob = new_bob
+      widget1 = Widget.create(name: 'wow', description: 'yowza', color: 'red', picture: 'http://www.cat.com/pic', is_public: true, user: bob)
+      widget2 = Widget.create(name: 'meow', description: 'meowza', color: 'purple', picture: 'http://www.frog.com/pic', is_public: false, user: bob)
+
+      get "/api/v1/widgets/#{widget1.id}"
+
+      expect(response).to be_successful
+      body = JSON.parse(response.body)
+
+      expect(body).to be_a(Hash)
+      expect(body['name']).to eq('wow')
+
+      get "/api/v1/widgets/#{widget2.id}"
+      expect(response).to_not be_successful
+    end
+  end
 end
