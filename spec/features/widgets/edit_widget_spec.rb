@@ -24,6 +24,7 @@ describe 'edit widget' do
     fill_in 'widget[name]', with: 'meow'
     fill_in 'widget[description]', with: 'meowza'
     fill_in 'widget[picture]', with: 'http://www.dog.com/pic'
+    select 'blue', from: 'widget[color]'
     click_on 'Update Widget'
 
     expect(current_path).to eq(widget_path(widget))

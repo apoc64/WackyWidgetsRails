@@ -5,4 +5,8 @@ class Widget < ApplicationRecord
   def self.all_public
     where(is_public: true)
   end
+
+  def self.color_options
+    colors.keys
+  end
 end
