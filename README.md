@@ -1,6 +1,6 @@
 # Wacky Widgets
 
-This is a CMS for widgets. Logged in users can create, read, update and delete widgets from the browser, and a public REST API provides all public widgets or a single public widget as json. The app is deployed at https://wackywidgets.herokuapp.com
+This is a CMS for widgets. It's really not that wacky. Logged in users can create, read, update and delete widgets from the browser, and a public REST API provides all public widgets or a single public widget as json. The app is deployed at https://wackywidgets.herokuapp.com
 
 ### Setup:
 
