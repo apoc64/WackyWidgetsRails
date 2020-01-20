@@ -23,7 +23,9 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-coverage
+/coverage
+/active_designer
+.DS_store
 
 /public/packs
 /public/packs-test
