@@ -42,6 +42,7 @@ class WidgetsController < ApplicationController
   # PATCH/PUT /widgets/1.json
   def update
     respond_to do |format|
+      
       if @widget.update(widget_params)
         format.html { redirect_to @widget, notice: 'Widget was successfully updated.' }
         format.json { render :show, status: :ok, location: @widget }

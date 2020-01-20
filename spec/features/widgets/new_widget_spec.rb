@@ -18,6 +18,7 @@ describe 'new widget' do
     fill_in 'widget[description]', with: 'yowza'
     fill_in 'widget[picture]', with: 'http://www.cat.com/pic'
     select 'red', from: 'widget[color]'
+    check 'widget[is_public]'
     click_on 'Create Widget'
 
     expect(Widget.count).to eq(1)
@@ -25,6 +26,7 @@ describe 'new widget' do
     expect(current_path).to eq(widget_path(widget))
     expect(widget.name).to eq('wow')
     expect(widget.color).to eq('red')
+    expect(widget.is_public).to eq(true)
     expect(widget.user).to eq(bob)
   end
 end
