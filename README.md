@@ -26,9 +26,9 @@ From the Rails console, create a user with this syntax:
 
 ### Endpoints:
 
-/api/v1/widgets - all the public widgets
+GET /api/v1/widgets - all the public widgets
 
-/api/v1/widgets/:id - a single widget
+GET /api/v1/widgets/:id - a single widget
 
 ### Additional Features:
 
