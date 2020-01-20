@@ -24,6 +24,8 @@ describe 'edit widget' do
     fill_in 'widget[name]', with: 'meow'
     fill_in 'widget[description]', with: 'meowza'
     fill_in 'widget[picture]', with: 'http://www.dog.com/pic'
+    select 'blue', from: 'widget[color]'
+    uncheck 'widget[is_public]'
     click_on 'Update Widget'
 
     expect(current_path).to eq(widget_path(widget))
@@ -33,6 +35,8 @@ describe 'edit widget' do
     expect(page).to_not have_content('yowza')
     expect(page).to have_content('dog.com')
     expect(page).to_not have_content('cat.com')
+    expect(page).to have_content('false')
+    expect(page).to_not have_content('true')
     expect(Widget.count).to eq(1)
   end
 

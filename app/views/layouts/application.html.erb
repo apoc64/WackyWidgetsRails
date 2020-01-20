@@ -5,11 +5,12 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
@@ -24,6 +25,7 @@
               <ul class="right hide-on-med-and-down">
                 <% if logged_in? %>
                   <li><%= link_to "My Profile", user_path(current_user) %></li>
+                  <li><%= link_to "Widgets", widgets_path %></li>
                   <li><%= link_to "Log Out", session_path(current_user), method: :delete %></li>
                 <% else %>
                   <%= form_tag sessions_path do %>
@@ -40,18 +42,19 @@
       <ul class="sidenav" id="mobile-nav">
         <% if logged_in? %>
           <li><%= link_to "My Profile", user_path(current_user) %></li>
+          <li><%= link_to "Widgets", widgets_path %></li>
           <li><%= link_to "Log Out", session_path(current_user), method: :delete %></li>
         <% else %>
           <%= form_tag sessions_path do %>
-          <li><%= text_field_tag :email, params[:email], placeholder: 'Email', id: 'nav-email' %></li>
-          <li><%= password_field_tag :password, params[:password], placeholder: 'Password', id: 'nav-password' %></li>
+          <li><%= text_field_tag :email, params[:email], placeholder: 'Email', id: 'sidenav-email' %></li>
+          <li><%= password_field_tag :password, params[:password], placeholder: 'Password', id: 'sidenav-password' %></li>
           <li><%= submit_tag 'Log In', class: 'btn-small red darken-1' %></li>
           <% end %>
         <% end %>
       </ul>
     <div class="container">
     <% flash.each do |type, message| %>
-      <p><%= message %></p>
+      <p class=<%= type %>><%= message %></p>
     <% end %>
     <%= yield %>
     </div>
