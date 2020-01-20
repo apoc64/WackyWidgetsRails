@@ -36,3 +36,4 @@ To view test coverage using SimpleCov, open /coverage/index.html in the browser 
 
 To view a data model visualization using ActiveDesigner, run:
 `active_designer --create ./db/schema.rb`
+and then open /active_designer/index.html
