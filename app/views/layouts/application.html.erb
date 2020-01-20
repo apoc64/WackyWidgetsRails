@@ -44,15 +44,15 @@
           <li><%= link_to "Log Out", session_path(current_user), method: :delete %></li>
         <% else %>
           <%= form_tag sessions_path do %>
-          <li><%= text_field_tag :email, params[:email], placeholder: 'Email' %></li>
-          <li><%= password_field_tag :password, params[:password], placeholder: 'Password' %></li>
+          <li><%= text_field_tag :email, params[:email], placeholder: 'Email', id: 'sidenav-email' %></li>
+          <li><%= password_field_tag :password, params[:password], placeholder: 'Password', id: 'sidenav-password' %></li>
           <li><%= submit_tag 'Log In', class: 'btn-small red darken-1' %></li>
           <% end %>
         <% end %>
       </ul>
     <div class="container">
     <% flash.each do |type, message| %>
-      <p><%= message %></p>
+      <p class=<%= type %>><%= message %></p>
     <% end %>
     <%= yield %>
     </div>

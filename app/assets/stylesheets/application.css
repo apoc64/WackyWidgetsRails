@@ -13,10 +13,24 @@
  *= require_tree .
  *= require_self
  */
- #nav-email, #nav-password {
-   background-color: white;
-   margin: .5em;
-   padding: .5em;
-   height: 70%;
-   width: 85%;
- }
+#nav-email, #nav-password {
+ background-color: white;
+ margin: .5em;
+ padding: .5em;
+ height: 70%;
+ width: 85%;
+}
+
+#sidenav-email, #sidenav-password {
+  margin: .5em;
+}
+
+.alert {
+  padding: 1em;
+  background-color: #ffcccc;
+}
+
+.notice {
+  padding: 1em;
+  background-color: #90ee90;
+}
