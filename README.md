@@ -21,6 +21,7 @@ Currently, users are only created from the command line. To enter the Rails cons
 `rails c`
 
 From the Rails console, create a user with this syntax:
+
 `User.create(email: 'hello@example.com', password: 'Hello123!', name: 'Olleh')`
 
 ### Endpoints:
