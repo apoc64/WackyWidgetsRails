@@ -38,7 +38,7 @@ describe 'user login' do
     end
 
     expect(current_path).to_not eq(user_path(user))
-    expect(page).to_not have_content('Bob Jones')
+    expect(page).to_not have_content('Bob')
     expect(page).to_not have_content('Logged in successfully')
     expect(page).to_not have_content('Log Out')
     expect(page).to have_content('Invalid email or password')
@@ -86,5 +86,4 @@ describe 'user login' do
     expect(current_path).to eq(root_path)
     expect(page).to have_content('Access Denied')
   end
-
 end

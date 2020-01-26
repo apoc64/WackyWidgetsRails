@@ -16,17 +16,9 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-document.addEventListener('DOMContentLoaded', function() {
-  materializeInit()
-});
-
-document.addEventListener('turbolinks:render', function() {
-  materializeInit()
-});
-
-function materializeInit() {
+document.addEventListener('turbolinks:load', function() {
   const sideNav = document.querySelector('.sidenav');
   M.Sidenav.init(sideNav, {});
   var elems = document.querySelectorAll('select');
   var instances = M.FormSelect.init(elems);
-}
+});

@@ -8,20 +8,10 @@ module TestHelpers
       User.create(email: 'barb@barb.barb', password: 'Barb321!', name: 'Barb')
     end
 
+    # Login helpers return the user if login was successful, false if not
     def login_bob
       user = new_bob
-
-      visit root_path
-      expect(page).to_not have_content('Log Out')
-      expect(page).to have_button('Log In')
-
-      within('nav') do
-        fill_in :email, with: user.email
-        fill_in :password, with: 'Bob1234!'
-        click_on 'Log In'
-      end
-
-      user
+      login_user(user, 'Bob1234!')
     end
 
     def login_user(user, password)
@@ -33,7 +23,10 @@ module TestHelpers
         click_on 'Log In'
       end
 
-      current_path == user_path(user)
+      if current_path == user_path(user)
+        return user
+      end
+      false
     end
   end
 end
