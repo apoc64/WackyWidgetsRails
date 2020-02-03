@@ -17,8 +17,14 @@ require("channels")
 // const imagePath = (name) => images(name, true)
 
 document.addEventListener('turbolinks:load', function() {
-  const sideNav = document.querySelector('.sidenav');
-  M.Sidenav.init(sideNav, {});
-  var elems = document.querySelectorAll('select');
-  var instances = M.FormSelect.init(elems);
-});
+  const sideNav = document.querySelector('.sidenav-icon')
+  const navLinks = document.querySelector('.nav-links')
+
+  sideNav.addEventListener('click', function() {
+    if (navLinks.className === "nav-links") {
+      navLinks.className += " visible";
+    } else {
+      navLinks.className = "nav-links"
+    }
+  })
+})

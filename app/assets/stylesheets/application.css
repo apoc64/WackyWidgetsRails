@@ -13,16 +13,64 @@
  *= require_tree .
  *= require_self
  */
-#nav-email, #nav-password {
- background-color: white;
- margin: .5em;
- padding: .5em;
- height: 70%;
- width: 85%;
+
+body {
+  width: 100%;
+  font-family: ariel, sans-serif;
+  padding: 0;
+  margin: 0;
 }
 
-#sidenav-email, #sidenav-password {
-  margin: .5em;
+nav {
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul {
+  float: right;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  list-style-type: none;
+}
+nav li {
+  padding: .5em;
+  float: left;
+}
+nav a {
+  text-decoration: none;
+  color: white;
+}
+nav li:hover {
+  background-color: #cc0000;
+}
+nav li:active {
+  background-color: #dd0000;
+}
+
+.dark-red {
+  background-color: #bb0000;
+}
+
+.logo {
+  color: white;
+  text-decoration: none;
+  float: left;
+  font-size: 1.4em;
+  margin-top: .2em;
+  margin-bottom: .2em;
+}
+
+.sidenav-icon {
+  display: none;
+}
+
+.container {
+  overflow: hidden;
+  margin-left: 2em;
+  margin-right: 2em;
+  padding: .5em;
 }
 
 .alert {
@@ -37,4 +85,27 @@
 
 .field {
   padding: .5em;
+}
+
+
+@media screen and (max-width: 600px) {
+  nav ul {
+    display: none;
+  }
+
+  .logo {
+    float: none;
+    align-self: center;
+  }
+  
+  .sidenav-icon {
+    display: inline;
+  }
+
+  .visible {
+    display: block;
+  }
+  .visible ul {
+    list-style-type:
+  }
 }
