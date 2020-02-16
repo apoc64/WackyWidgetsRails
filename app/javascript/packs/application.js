@@ -17,14 +17,16 @@ require("channels")
 // const imagePath = (name) => images(name, true)
 
 document.addEventListener('turbolinks:load', function() {
-  const sideNav = document.querySelector('.sidenav-icon')
-  const navLinks = document.querySelector('.nav-links')
 
-  sideNav.addEventListener('click', function() {
-    if (navLinks.className === "nav-links") {
-      navLinks.className += " visible";
+  // Initialize side nav
+  const navIcon = document.querySelector('.sidenav-icon')
+  const sideNav = document.querySelector('.side-nav')
+
+  navIcon.addEventListener('click', function() {
+    if (sideNav.className === "side-nav") {
+      sideNav.className += " visible";
     } else {
-      navLinks.className = "nav-links"
+      sideNav.className = "side-nav"
     }
   })
 })
