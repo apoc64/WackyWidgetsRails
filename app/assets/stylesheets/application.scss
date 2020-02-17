@@ -12,6 +12,8 @@ $light-green: #90ee90;
 $light-grey: #dddddd;
 $light-grey2: #cccccc;
 $light-grey3: #bbbbbb;
+$dark-green: #117b11;
+$med-green: #228b22;
 $dark-text: black;
 $light-text: white;
 $transition-time: 0.2s;
@@ -46,8 +48,8 @@ body {
   background-color: $light-green;
 }
 
-.field {
-  padding: .5em;
+.top-space {
+  padding-top: 2em;
 }
 
 @media screen and (max-width: 600px) {
@@ -57,5 +59,15 @@ body {
     margin-left: 1.5em;
     margin-right: 1.5em;
     padding: .5em;
+  }
+}
+
+@media screen and (max-width: 320px) {
+
+  .container {
+    overflow: hidden;
+    margin-left: .7em;
+    margin-right: .7em;
+    padding: .3em;
   }
 }

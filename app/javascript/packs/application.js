@@ -18,9 +18,9 @@ require("channels")
 
 document.addEventListener('turbolinks:load', function() {
 
-  // Initialize side nav
   const navIcon = document.querySelector('.sidenav-icon')
   const sideNav = document.querySelector('.side-nav')
+  const mainContent = document.querySelector('.main-content')
 
   navIcon.addEventListener('click', function() {
     if (sideNav.className === "side-nav") {
@@ -29,4 +29,8 @@ document.addEventListener('turbolinks:load', function() {
       sideNav.className = "side-nav"
     }
   })
+
+  mainContent.addEventListener('click', function(event){
+    sideNav.className = "side-nav"
+  });
 })
