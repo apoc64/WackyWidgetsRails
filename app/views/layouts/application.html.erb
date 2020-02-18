@@ -5,57 +5,53 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-
+    <!-- TODO: Replace - Load an icon library to show a hamburger menu (bars) on small screens -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <div class="navbar-fixed">
-        <nav class="red darken-4">
-          <div class="container">
-            <div class="nav-wrapper">
-              <%= link_to "Wacky Widgets", root_path %>
-              <a href="#" data-target="mobile-nav" class="sidenav-trigger">
-                <i class="material-icons">menu</i>
-              </a>
-              <ul class="right hide-on-med-and-down">
-                <% if logged_in? %>
-                  <li><%= link_to "My Profile", user_path(current_user) %></li>
-                  <li><%= link_to "Widgets", widgets_path %></li>
-                  <li><%= link_to "Log Out", session_path(current_user), method: :delete %></li>
-                <% else %>
-                  <%= form_tag sessions_path do %>
-                  <li><%= text_field_tag :email, params[:email], placeholder: 'Email', id: 'nav-email' %></li>
-                  <li><%= password_field_tag :password, params[:password], placeholder: 'Password', id: 'nav-password' %></li>
-                  <li><%= submit_tag 'Log In', class: 'btn-small red darken-1' %></li>
-                  <% end %>
-                <% end %>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </div>
-      <ul class="sidenav" id="mobile-nav">
-        <% if logged_in? %>
-          <li><%= link_to "My Profile", user_path(current_user) %></li>
-          <li><%= link_to "Widgets", widgets_path %></li>
-          <li><%= link_to "Log Out", session_path(current_user), method: :delete %></li>
-        <% else %>
-          <%= form_tag sessions_path do %>
-          <li><%= text_field_tag :email, params[:email], placeholder: 'Email', id: 'sidenav-email' %></li>
-          <li><%= password_field_tag :password, params[:password], placeholder: 'Password', id: 'sidenav-password' %></li>
-          <li><%= submit_tag 'Log In', class: 'btn-small red darken-1' %></li>
+    <nav class="dark-red">
+      <div class="container">
+        <a href="javascript:void(0);" class="sidenav-icon">
+          <i class="fa fa-bars"></i>
+        </a>
+        <%= link_to "Wacky Widgets", root_path, class: 'logo' %>
+        <ul class="nav-links">
+          <% if logged_in? %>
+            <li><%= link_to "My Profile", user_path(current_user), class: 'nav-link' %></li>
+            <li><%= link_to "Widgets", widgets_path, class: 'nav-link' %>
+            <li><%= link_to "Log Out", session_path(current_user), method: :delete, class: 'nav-link' %></li>
+          <% else %>
+            <%= form_tag sessions_path do %>
+              <li><%= text_field_tag :email, params[:email], placeholder: 'Email', id: 'nav-email' %></li>
+              <li><%= password_field_tag :password, params[:password], placeholder: 'Password', id: 'nav-password' %></li>
+              <li><%= submit_tag 'Log In', class: 'btn-small red darken-1' %></li>
+            <% end %>
           <% end %>
+        </ul>
+      </div>
+    </nav>
+
+    <ul class="side-nav">
+      <% if logged_in? %>
+        <li><%= link_to "My Profile", user_path(current_user), class: 'nav-link' %></li>
+        <li><%= link_to "Widgets", widgets_path, class: 'nav-link' %>
+        <li><%= link_to "Log Out", session_path(current_user), method: :delete, class: 'nav-link' %></li>
+      <% else %>
+        <%= form_tag sessions_path do %>
+          <li><%= text_field_tag :email, params[:email], placeholder: 'Email', id: 'nav-email' %></li>
+          <li><%= password_field_tag :password, params[:password], placeholder: 'Password', id: 'nav-password' %></li>
+          <li><%= submit_tag 'Log In', class: 'btn-small red darken-1' %></li>
         <% end %>
-      </ul>
-    <div class="container">
-    <% flash.each do |type, message| %>
-      <p class=<%= type %>><%= message %></p>
-    <% end %>
+      <% end %>
+    </ul>
+
+    <div class="container main-content">
+      <% flash.each do |type, message| %>
+        <p class=<%= type %>><%= message %></p>
+      <% end %>
     <%= yield %>
     </div>
   </body>

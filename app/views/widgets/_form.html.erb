@@ -31,10 +31,12 @@
     <%= form.select :color, Widget.color_options %>
   </div>
 
-  <label class="field">
-    <%= form.check_box :is_public, class: "filled-in" %>
-    <span>Public</span>
-  </label>
+  <div class="field">
+    <label class="hoverable-field">
+      <%= form.check_box :is_public %>
+      <span class="form-label">Public</span>
+    </label>
+  </div>
 
   <div class="actions field">
     <%= form.submit %>

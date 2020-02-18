@@ -8,7 +8,7 @@ describe 'nav bar' do
 
     within('nav') do
       expect(page).to have_link("My Profile")
-      # Home link is WackyWidgets
+      # Home link is WackyWidgets, specify with href
       expect(page).to have_link("Widgets", href: widgets_path)
       expect(page).to have_link("Log Out")
       expect(page).to_not have_button("Log In")

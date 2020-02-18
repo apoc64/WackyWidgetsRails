@@ -1,0 +1,125 @@
+@import "application";
+
+nav {
+  color: white;
+  margin: 0;
+  padding: 0;
+  height: $nav-height;
+  position: fixed;
+  width: 100%;
+  top: 0;
+
+  a {
+    text-decoration: none;
+    color: $light-text;
+  }
+
+  .nav-links {
+    float: right;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+    list-style-type: none;
+    transition: display $transition-time;
+
+    li {
+      padding: .5em;
+      float: left;
+      transition: background-color $transition-time;
+
+      &:hover {
+        background-color: $med-red1;
+      }
+      &:active {
+        background-color: $med-red2;
+      }
+    }
+  } // .nav-links
+
+  .sidenav-icon {
+    display: none;
+    padding: .5em;
+    transition: display $transition-time;
+
+    &:hover {
+      background-color: $med-red1;
+    }
+    &:active {
+      background-color: $med-red2;
+    }
+  }
+
+  .logo {
+    color: $light-text;
+    text-decoration: none;
+    font-size: 1.4em;
+    margin-top: .2em;
+    margin-bottom: .2em;
+    transition: all $transition-time;
+  }
+} // nav
+
+.side-nav {
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  width: 0%;
+  top: $nav-height;
+  list-style-type: square;
+  background-color: $light-grey;
+  color: $dark-text;
+  transition: width $transition-time;
+  overflow: hidden;
+
+  li {
+    padding: 1em;
+    transition: background-color $transition-time;
+
+    a {
+      color: $dark-text;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    &:hover {
+      background-color: $light-grey2;
+    }
+
+    &:active {
+      background-color: $light-grey3;
+    }
+  }
+} // .side-nav
+
+@media screen and (max-width: 600px) {
+
+  nav {
+    .nav-links {
+      display: none;
+    }
+
+    .sidenav-icon {
+      display: inline;
+    }
+    .logo {
+      padding-left: 1em;
+    }
+  }
+
+  .side-nav.visible {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  nav {
+    .logo {
+      display: none;
+    }
+
+  }
+
+  .side-nav.visible {
+    width: 100%;
+  }
+}
