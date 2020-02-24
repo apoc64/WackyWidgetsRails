@@ -21,14 +21,14 @@
         <%= link_to "Wacky Widgets", root_path, class: 'logo' %>
         <ul class="nav-links">
           <% if logged_in? %>
-            <li><%= link_to "My Profile", user_path(current_user), class: 'nav-link' %></li>
-            <li><%= link_to "Widgets", widgets_path, class: 'nav-link' %>
-            <li><%= link_to "Log Out", session_path(current_user), method: :delete, class: 'nav-link' %></li>
+            <li><%= link_to "My Profile", user_path(current_user) %></li>
+            <li><%= link_to "Widgets", widgets_path %>
+            <li><%= link_to "Log Out", session_path(current_user), method: :delete %></li>
           <% else %>
             <%= form_tag sessions_path do %>
-              <li><%= text_field_tag :email, params[:email], placeholder: 'Email', id: 'nav-email' %></li>
-              <li><%= password_field_tag :password, params[:password], placeholder: 'Password', id: 'nav-password' %></li>
-              <li><%= submit_tag 'Log In', class: 'btn-small red darken-1' %></li>
+              <li><%= text_field_tag :email, params[:email], placeholder: 'Email' %></li>
+              <li><%= password_field_tag :password, params[:password], placeholder: 'Password' %></li>
+              <li><%= submit_tag 'Log In'  %></li>
             <% end %>
           <% end %>
         </ul>
@@ -38,13 +38,13 @@
     <ul class="side-nav">
       <% if logged_in? %>
         <li><%= link_to "My Profile", user_path(current_user), class: 'nav-link' %></li>
-        <li><%= link_to "Widgets", widgets_path, class: 'nav-link' %>
-        <li><%= link_to "Log Out", session_path(current_user), method: :delete, class: 'nav-link' %></li>
+        <li><%= link_to "Widgets", widgets_path %>
+        <li><%= link_to "Log Out", session_path(current_user), method: :delete %></li>
       <% else %>
         <%= form_tag sessions_path do %>
-          <li><%= text_field_tag :email, params[:email], placeholder: 'Email', id: 'nav-email' %></li>
-          <li><%= password_field_tag :password, params[:password], placeholder: 'Password', id: 'nav-password' %></li>
-          <li><%= submit_tag 'Log In', class: 'btn-small red darken-1' %></li>
+          <li><%= text_field_tag :email, params[:email], placeholder: 'Email' %></li>
+          <li><%= password_field_tag :password, params[:password], placeholder: 'Password' %></li>
+          <li><%= submit_tag 'Log In' %></li>
         <% end %>
       <% end %>
     </ul>
