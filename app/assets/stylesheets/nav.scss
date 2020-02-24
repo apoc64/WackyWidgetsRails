@@ -23,9 +23,13 @@ nav {
     transition: display $transition-time;
 
     li {
-      padding: .5em;
       float: left;
       transition: background-color $transition-time;
+
+      a {
+        padding: .5em;
+        display: block;
+      }
 
       &:hover {
         background-color: $med-red1;
@@ -72,10 +76,11 @@ nav {
   overflow: hidden;
 
   li {
-    padding: 1em;
     transition: background-color $transition-time;
 
     a {
+      display: block;
+      padding: 1em;
       color: $dark-text;
       text-decoration: none;
       white-space: nowrap;
