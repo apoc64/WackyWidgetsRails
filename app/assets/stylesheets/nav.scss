@@ -1,13 +1,15 @@
 @import "application";
 
 nav {
-  color: white;
+  background-color: $nav-color;
+  color: $nav-text;
   margin: 0;
   padding: 0;
   height: $nav-height;
   position: fixed;
   width: 100%;
   top: 0;
+
 
   a {
     text-decoration: none;
@@ -29,37 +31,67 @@ nav {
       a {
         padding: .5em;
         display: block;
+
+        &:hover {
+          background-color: $nav-tint;
+        }
+        &:active {
+          background-color: $nav-tint2;
+        }
       }
 
-      &:hover {
-        background-color: $med-red1;
+      input {
+        padding: .4em;
+        margin-left: .5em;
+        margin-right: .5em;
+        font-size: .8em;
       }
-      &:active {
-        background-color: $med-red2;
+
+      input[type=submit] {
+        color: $nav-text;
+        border-width: thin;
+        border-color: $light-grey;
+        border-style: ridge;
+        font-weight: 500;
+        border-radius: .5em;
+        background-color: $nav-tint2;
+
+        padding-left: 1.2em;
+        padding-right: 1.2em;
+        transition: background-color $transition-time;
+        transition: border-color $transition-time;
+
+        &:hover {
+          background-color: $nav-tint;
+          border-color: $light-grey2;
+          box-shadow: 10px, 10px, 5px, grey;
+        }
       }
-    }
+    } // li
   } // .nav-links
 
   .sidenav-icon {
     display: none;
-    padding: .5em;
-    transition: display $transition-time;
 
-    &:hover {
-      background-color: $med-red1;
-    }
-    &:active {
-      background-color: $med-red2;
+    img {
+      padding: .3em;
+      height: 1.2em;
+      transition: background-color $transition-time;
+
+      &:hover {
+        background-color: $nav-tint;
+      }
+      &:active {
+        background-color: $nav-tint2;
+      }
     }
   }
 
   .logo {
+    display: inline;
     color: $light-text;
     text-decoration: none;
     font-size: 1.4em;
-    margin-top: .2em;
-    margin-bottom: .2em;
-    transition: all $transition-time;
   }
 } // nav
 
@@ -104,10 +136,13 @@ nav {
     }
 
     .sidenav-icon {
-      display: inline;
+      display: inline;;
     }
     .logo {
-      padding-left: 1em;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
     }
   }
 

@@ -19,6 +19,10 @@
     height: 5em;
   }
 
+  select {
+    height: 2em;
+  }
+
   input[type=submit] {
     margin-top: 1em;
     margin-bottom: 1em;
@@ -28,11 +32,15 @@
     color: $light-text;
     font-size: 1.1em;
     font-weight: 500;
-    border-radius: .2em;
+    border-radius: .5em;
+    border-style: ridge;
+    border-color: $light-grey;
     transition: background-color $transition-time;
+    transition: border-color $transition-time;
 
     &:hover {
       background-color: $med-green;
+      border-color: $light-grey2;
     }
   }
 
