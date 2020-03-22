@@ -42,7 +42,7 @@ class WidgetsController < ApplicationController
   # PATCH/PUT /widgets/1.json
   def update
     respond_to do |format|
-      
+
       if @widget.update(widget_params)
         format.html { redirect_to @widget, notice: 'Widget was successfully updated.' }
         format.json { render :show, status: :ok, location: @widget }
@@ -60,6 +60,14 @@ class WidgetsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to widgets_url, notice: 'Widget was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def publish
+    if Widget.publish
+      redirect_to widgets_path, notice: 'Widgets successfully published.'
+    else
+      redirect_to widgets_path, alert: 'Error publishing widgets.'
     end
   end
 
