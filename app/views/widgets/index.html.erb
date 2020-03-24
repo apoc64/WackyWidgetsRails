@@ -32,5 +32,8 @@
 
 <br>
 
-<%= link_to 'New Widget', new_widget_path %> |
-<%= link_to 'Publish', '/publish' %>
+<%= link_to 'New Widget', new_widget_path %>
+
+<div class='field'>
+  <%= button_to 'Publish', '/publish', data: { confirm: 'Are you sure?' }  %>
+</div>

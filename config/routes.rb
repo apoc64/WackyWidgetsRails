@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :widgets
-  get 'publish', to: 'widgets#publish'
+  post 'publish', to: 'widgets#publish'
 
   root to: 'home#index'
   resources :sessions, only: [:create, :destroy]
