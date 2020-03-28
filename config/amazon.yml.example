@@ -1,0 +1,4 @@
+AWS_ACCESS_KEY_ID: XXXXXXXXXXXXXXXXXXXX
+AWS_SECRET_ACCESS_KEY: xxxxxxxxxxxxxxxxx+xxxxxxxxxxxxxxxxx
+AWS_BUCKET: "wacky-widgets"
+AWS_REGION: "us-east-2"

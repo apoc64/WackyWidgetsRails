@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :widgets
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  post 'publish', to: 'widgets#publish'
+
   root to: 'home#index'
   resources :sessions, only: [:create, :destroy]
   resources :users, only: [:show]

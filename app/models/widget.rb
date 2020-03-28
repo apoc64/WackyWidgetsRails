@@ -9,4 +9,9 @@ class Widget < ApplicationRecord
   def self.color_options
     colors.keys
   end
+
+  def self.publish
+    data = all_public.to_json
+    AwsUploader.upload(data, 'widgets.json')
+  end
 end

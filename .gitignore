@@ -25,6 +25,7 @@
 
 /coverage
 /active_designer
+config/amazon.yml
 .DS_store
 
 /public/packs
