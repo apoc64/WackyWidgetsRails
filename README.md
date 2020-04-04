@@ -48,7 +48,7 @@ The app provides a public REST API that returns json for the following endpoints
 
 ### Deployment:
 
-The Heroku project for this app is connected to this repo, so that any commit to master will automatically trigger a new build in the Heroku app. It is currently running on a free hobby plan, so dynos my go to sleep if unused for 30 minutes and require 30 seconds or more to wake up when the app receives a new request.
+The Heroku project for this app is connected to this repo, so that any commit to master will automatically trigger a new build in the Heroku app. It is currently running on a free hobby plan, so dynos may go to sleep if unused for 30 minutes and require 30 seconds or more to wake up when the app receives a new request.
 
 ### Additional Features:
 
