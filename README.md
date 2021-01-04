@@ -28,12 +28,11 @@ To run the server on localhost:3000, run:
 
 To run the tests, run:
 `rspec`
-Note: Currently, there is a deprecation warning in the test target related to autoloading constants. This does not affect the development or production environments.
 
 Currently, users are only created from the command line. To enter the Rails console, run:
 `rails c`
 
-From the Rails console, create a user with this syntax:
+From the Rails console, create a user with this syntax(this may be used on the Heroku deployment):
 
 `User.create(email: 'hello@example.com', password: 'Hello123!', name: 'Olleh')`
 
