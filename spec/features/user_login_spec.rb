@@ -10,11 +10,9 @@ describe 'user login' do
     expect(page).to_not have_content('Log Out')
     expect(page).to have_button('Log In')
 
-    within('nav') do
-      fill_in :email, with: user.email
-      fill_in :password, with: 'Bob1234!'
-      click_on 'Log In'
-    end
+    fill_in :email, with: user.email
+    fill_in :password, with: 'Bob1234!'
+    click_on 'Log In'
 
     expect(current_path).to eq(user_path(user))
     expect(page).to have_content('Hi Bob')
@@ -31,11 +29,9 @@ describe 'user login' do
     expect(page).to_not have_content('Log Out')
     expect(page).to have_button('Log In')
 
-    within('nav') do
-      fill_in :email, with: user.email
-      fill_in :password, with: '125'
-      click_on 'Log In'
-    end
+    fill_in :email, with: user.email
+    fill_in :password, with: '125'
+    click_on 'Log In'
 
     expect(current_path).to_not eq(user_path(user))
     expect(page).to_not have_content('Bob')

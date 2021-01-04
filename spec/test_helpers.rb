@@ -17,11 +17,9 @@ module TestHelpers
     def login_user(user, password)
       visit root_path
 
-      within('nav') do
-        fill_in :email, with: user.email
-        fill_in :password, with: password
-        click_on 'Log In'
-      end
+      fill_in :email, with: user.email
+      fill_in :password, with: password
+      click_on 'Log In'
 
       if current_path == user_path(user)
         return user

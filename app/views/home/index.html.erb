@@ -1,2 +1,24 @@
 <h1>Welcome to Wacky Widgets</h1>
 <p>This CMS (content management system) allows you to create, update, and delete widgets and publish them as static json so anyone can download them <a href="https://wacky-widgets.s3.us-east-2.amazonaws.com/widgets.json">here</a>.</p>
+
+<% if !logged_in? %>
+<div class="container">
+  <h4>To do wacky stuff with widgets, please log in:</h4>
+
+  <%= form_tag sessions_path do %>
+    <div class="field">
+      <%= label_tag :email %>
+      <%= email_field_tag :email, params[:email] %>
+    </div>
+
+    <div class="field">
+      <%= label_tag :password %>
+      <%= password_field_tag :password, params[:password] %>
+    </div>
+
+    <div class="actions field">
+      <%= submit_tag 'Log In' %>
+    </div>
+  <% end %>
+</div>
+<% end %>
