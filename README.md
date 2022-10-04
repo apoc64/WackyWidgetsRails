@@ -9,6 +9,7 @@ This uses Ruby 2.6.3, Rails 6.0.2.2, and Postgres. If you are using homebrew and
 brew upgrade rbenv
 rbenv install 2.6.3
 ```
+Note for M1 Macs: If you have homebrew and rbenv configured in Terminal using Rosetta, and a text editor with an integrated terminal not using Rosetta, run the previous commands in Terminal. 
 
 This uses webpacker and yarn for JavaScript dependencies. If necessary, run:
 `brew install yarn`
@@ -16,6 +17,7 @@ This uses webpacker and yarn for JavaScript dependencies. If necessary, run:
 Once your environment is configured including bundler, and the repo is cloned, run:
 ```
 bundle install
+rake:webpacker:install
 yarn install
 rake db:create
 rake db:migrate
